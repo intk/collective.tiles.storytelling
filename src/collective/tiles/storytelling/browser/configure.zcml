@@ -13,7 +13,7 @@
 
   <browser:jbot
       directory="overrides"
-      layer="collective.tiles.storytelling.browser.storytelling.IStorytellingTileLayer"
+      layer="collective.tiles.storytelling.interfaces.ICollectiveTilesStorytellingLayer"
       />
 
   <!-- Publish static files -->
@@ -24,13 +24,13 @@
       />
 
   <plone:tile
-        name="collective.tiles.storytelling"
-        title="Storytelling Tiles"
-        description='Tiles that allow to create a page with storytelling'
+        name="collective.tiles.storytelling.sidetext"
+        title="Side Text Slide"
+        description='Slide with a portrait image and text on the side'
         permission="zope2.View"
         add_permission="cmf.ModifyPortalContent"
-        class=".storytelling.StorytellingTile"
-        schema=".storytelling.IStorytellingTile"
+        class=".storytelling.SideTextTile"
+        schema=".storytelling.ISideTextTile"
         for="*"
         />
         

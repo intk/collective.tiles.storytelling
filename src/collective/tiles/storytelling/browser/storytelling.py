@@ -1,29 +1,45 @@
 # -*- coding: utf-8 -*-
-from operator import itemgetter
-from plone.app.contenttypes.behaviors.collection import ISyndicatableCollection
-from plone.app.standardtiles import PloneMessageFactory as _
-from plone.app.z3cform.widget import QueryStringFieldWidget
-from plone.autoform.directives import widget
-from plone.registry.interfaces import IRegistry
+from plone.app.standardtiles import _PMF as _
+from plone.subrequest import ISubRequest
+from plone.supermodel.directives import primary
 from plone.supermodel.model import Schema
-from plone.tiles import Tile, PersistentTile
-from plone.tiles.interfaces import ITileType
-from Products.CMFCore.interfaces import IFolderish
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from z3c.form.interfaces import IValue
-from z3c.form.util import getSpecification
+from plone.tiles import Tile
+from plone.tiles.directives import ignore_querystring
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
 from zope import schema
-from zope.component import adapter
-from zope.component import getMultiAdapter
-from zope.component import getUtility
-from zope.component import queryUtility
-from zope.interface import alsoProvides
-from zope.interface import implementer
-from zope.interface import Interface
-from zope.interface import provider
-from zope.schema import getFields
-from zope.schema.interfaces import IVocabularyFactory
-from zope.schema.vocabulary import SimpleVocabulary
 
 
+TEMPLATE = "<div class='side-text-slide'></div>"
 
+class ISideTextTile(Schema):
+
+    ignore_querystring('content')
+    primary('content')
+    content = schema.Text(
+        title=_(u'HTML'),
+        required=True,
+    )
+
+class SideTextTile(Tile):
+    """
+    A persistent HTML content tile that can be used for
+    re-usable layouts in the mosaic editor
+    """
+
+    def __call__(self):
+        content = self.data.get('content')
+        if content:
+            # only transform is not rendering for layout editor
+            if (not self.request.get('_layouteditor') or
+                    ISubRequest.providedBy(self.request)):
+                transforms = getToolByName(self.context, 'portal_transforms')
+                data = transforms.convertTo(
+                    'text/x-html-safe',
+                    safe_unicode(content), mimetype='text/html',
+                    context=self.context
+                )
+                content = data.getData()
+        else:
+            content = u'<p>This is a side text slide</p>'
+        return u"<html><body>%s</body></html>" % safe_unicode(content)
