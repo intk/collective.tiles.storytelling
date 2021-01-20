@@ -41,5 +41,5 @@ class SideTextTile(Tile):
                 )
                 content = data.getData()
         else:
-            content = u'<p>This is a side text slide</p>'
+            content = u'<p>This is a side text slide - Default text</p>'
         return u"<html><body>%s</body></html>" % safe_unicode(content)
