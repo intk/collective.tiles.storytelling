@@ -35,14 +35,14 @@ src/collective/tiles/storytelling/browser/configure.zcml
 src/collective/tiles/storytelling/browser/storytelling.py
 src/collective/tiles/storytelling/browser/overrides/.gitkeep
 src/collective/tiles/storytelling/browser/static/.gitkeep
-src/collective/tiles/storytelling/browser/templates/listing_view.pt
-src/collective/tiles/storytelling/browser/templates/slickcarousel_view.pt
+src/collective/tiles/storytelling/browser/templates/sidetext.pt
 src/collective/tiles/storytelling/locales/README.rst
 src/collective/tiles/storytelling/locales/__init__.py
 src/collective/tiles/storytelling/locales/__init__.pyo
 src/collective/tiles/storytelling/locales/collective.tiles.storytelling.pot
 src/collective/tiles/storytelling/locales/update.py
 src/collective/tiles/storytelling/locales/update.sh
+src/collective/tiles/storytelling/locales/en/LC_MESSAGES/collective.tiles.storytelling.mo
 src/collective/tiles/storytelling/locales/en/LC_MESSAGES/collective.tiles.storytelling.po
 src/collective/tiles/storytelling/profiles/default/browserlayer.xml
 src/collective/tiles/storytelling/profiles/default/catalog.xml

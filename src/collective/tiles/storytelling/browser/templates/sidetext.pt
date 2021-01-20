@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+<body>
+<div tal:define="image view/image_url;
+                 alignment view/alignment|nothing;
+                 noimage python:not image and 'noimage' or '';
+                 id view/tile_id" 
+        class="side-text-slide row ${noimage} align-${alignment}" style="padding-top: 25px;padding-bottom:25px;">
+    
+    <tal:alignmentcss tal:condition="python: alignment == 'Right'">
+        <style>
+            .side-text-slide.align-Right .side-text-image {
+                float:right;
+            }
+        </style>
+    </tal:alignmentcss>
+    <div class="side-text-slide-wrapper col-xs-12">
+        <div class="side-text-image col-xs-12 col-sm-12 col-md-5 col-lg-5">
+            <img src="${image}" class="side-text-image" style="max-width: 100%; height: auto; width: 100%;"/>
+        </div>
+        <div class="side-text-body col-xs-12 col-sm-12 col-md-7 col-lg-7">
+            <h4 class="side-text-title">
+                <span tal:replace="view/title" />
+            </h4>
+            <div tal:replace="structure view/body/output" />
+        </div>
+    </div>
+</div>
+
+</body></html>

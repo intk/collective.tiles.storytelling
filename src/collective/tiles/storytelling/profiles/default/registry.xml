@@ -5,44 +5,22 @@
 
     <record name="plone.app.tiles">
     	<value purge="false">
-      		<element>collective.tiles.storytelling.sidetext</element>
+			<element>collective.tiles.storytelling.sidetextslide</element>
     	</value>
   	</record>
 
-  	<records prefix="plone.app.mosaic.app_tiles.collective_tiles_storytelling_sidetext" interface="plone.app.mosaic.interfaces.ITile">
-	    <value key="name">collective.tiles.storytelling.sidetext</value>
-	    <value key="label">Side Text Slide</value>
-	    <value key="category">structure</value>
-	    <value key="tile_type">textapp</value>
-	    <value key="default_value">&lt;p&gt;This is a side text slide&lt;/p&gt;</value>
-	    <value key="read_only">false</value>
-	    <value key="settings">false</value>
-	    <value key="favorite">false</value>
-	    <value key="rich_text">true</value>
-	    <value key="weight">30</value>
+	<records prefix="plone.app.mosaic.app_tiles.collective_tiles_storytelling_sidetextslide"
+           interface="plone.app.mosaic.interfaces.ITile">
+		<value key="name">collective.tiles.storytelling.sidetextslide</value>
+		<value key="label">Side Text Slide Tile</value>
+		<value key="category">structure</value>
+		<value key="tile_type">app</value>
+		<value key="default_value"></value>
+		<value key="read_only">false</value>
+		<value key="settings">true</value>
+		<value key="favorite">true</value>
+		<value key="rich_text">false</value>
+		<value key="weight">10</value>
   	</records>
 	  
-	<record name="plone.app.mosaic.app_tiles.collective_tiles_storytelling_sidetext.available_actions">
-		<field type="plone.registry.field.List">
-			<title>Available actions for the side text slide tile</title>
-			<value_type type="plone.registry.field.TextLine" />
-		</field>
-		<value>
-			<element>toolbar-styleselect</element>
-			<element>toolbar-bold</element>
-			<element>toolbar-italic</element>
-			<element>toolbar-alignleft</element>
-			<element>toolbar-aligncenter</element>
-			<element>toolbar-alignright</element>
-			<element>toolbar-alignjustify</element>
-			<element>toolbar-bullist</element>
-			<element>toolbar-numlist</element>
-			<element>toolbar-table</element>
-			<element>toolbar-ploneimage</element>
-			<element>toolbar-unlink</element>
-			<element>toolbar-plonelink</element>
-			<element>toolbar-code</element>
-		</value>
-  </record>
-
 </registry>

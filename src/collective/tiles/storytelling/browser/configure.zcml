@@ -23,7 +23,7 @@
       directory="static"
       />
 
-  <plone:tile
+  <!--<plone:tile
         name="collective.tiles.storytelling.sidetext"
         title="Side Text Slide"
         description='Slide with a portrait image and text on the side'
@@ -32,8 +32,16 @@
         class=".storytelling.SideTextTile"
         schema=".storytelling.ISideTextTile"
         for="*"
-        />
-        
+        />-->
 
+    <plone:tile
+        name="collective.tiles.storytelling.sidetextslide"
+        title="Side Text Slide"
+        for="*"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        class=".storytelling.SideTextSlideTile"
+        schema=".storytelling.ISideTextSlideTile"
+    />
 
 </configure>
