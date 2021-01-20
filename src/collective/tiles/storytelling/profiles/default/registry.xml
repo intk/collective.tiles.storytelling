@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<registry
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="collective.tiles.storytelling">
+
+    <record name="plone.app.tiles">
+    	<value purge="false">
+      		<element>collective.tiles.storytelling</element>
+    	</value>
+  	</record>
+
+  	<records prefix="plone.app.mosaic.app_tiles.collective_tiles_storytelling" interface="plone.app.mosaic.interfaces.ITile">
+	    <value key="name">collective.tiles.storytelling</value>
+	    <value key="label">Storytelling Carousel</value>
+	    <value key="category">applications</value>
+	    <value key="tile_type">app</value>
+	    <value key="default_value"></value>
+	    <value key="read_only">false</value>
+	    <value key="settings">true</value>
+	    <value key="favorite">false</value>
+	    <value key="rich_text">false</value>
+	    <value key="weight">30</value>
+  	</records>
+
+    <record name="collective.tiles.storytelling.listing_views">
+	    <field type="plone.registry.field.Dict">
+	      <title>Listing Views</title>
+	      <key_type type="plone.registry.field.TextLine" />
+	      <value_type type="plone.registry.field.TextLine" />
+	    </field>
+	    <value purge="false">
+	      <element key="listing_view">Listing view</element>
+	    </value>
+	 </record>
+
+</registry>
