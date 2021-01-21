@@ -12,7 +12,7 @@
 	<records prefix="plone.app.mosaic.app_tiles.collective_tiles_storytelling_sidetextslide"
            interface="plone.app.mosaic.interfaces.ITile">
 		<value key="name">collective.tiles.storytelling.sidetextslide</value>
-		<value key="label">Side Text Slide Tile</value>
+		<value key="label">Storytelling - Side Text Slide</value>
 		<value key="category">structure</value>
 		<value key="tile_type">app</value>
 		<value key="default_value"></value>
@@ -22,30 +22,6 @@
 		<value key="rich_text">false</value>
 		<value key="weight">10</value>
   	</records>
-
-	<record name="plone.app.mosaic.app_tiles.plone_app_standardtiles_html.available_actions">
-		<field type="plone.registry.field.List">
-			<title>Available actions for the html tile</title>
-			<value_type type="plone.registry.field.TextLine" />
-		</field>
-		<value purge="True">
-			<element>toolbar-styleselect</element>
-			<element>toolbar-bold</element>
-			<element>toolbar-italic</element>
-			<element>toolbar-alignleft</element>
-			<element>toolbar-aligncenter</element>
-			<element>toolbar-alignright</element>
-			<element>toolbar-alignjustify</element>
-			<element>toolbar-bullist</element>
-			<element>toolbar-numlist</element>
-			<element>toolbar-table</element>
-			<element>toolbar-ploneimage</element>
-			<element>toolbar-unlink</element>
-			<element>toolbar-plonelink</element>
-			<element>toolbar-code</element>
-		</value>
-  	</record>
-
 
 	<record name="plone.app.mosaic.app_tiles.collective_tiles_storytelling_sidetextslide.selected_image.available_actions">
 		<field type="plone.registry.field.List">
