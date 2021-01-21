@@ -48,6 +48,7 @@ class SideTextTile(Tile):
             content = u'<p>This is a side text slide - Default text</p>'
         return u"<html><body>%s</body></html>" % safe_unicode(content)
 
+
 class SideTextSlideTile(Tile):
     template = ViewPageTemplateFile('templates/sidetext.pt')
 
@@ -59,13 +60,9 @@ class SideTextSlideTile(Tile):
         self.title = self.data.get('title', '')
         self.body = self.data.get('body', '')
         self.alignment = self.data.get('image_alignment', '')
+        self.selected_image = self.data.get('selected_image', '')
         self.tile_id = getUtility(IIDNormalizer).normalize(self.title)
-        img_uid = self.data.get('image', None)
         
-        if img_uid is None:
-            self.image_url = None
-        else:
-            self.image_url = api.content.get(UID=img_uid).absolute_url()
 
 class ISideTextSlideTile(Schema):
     title = schema.TextLine(
@@ -77,19 +74,11 @@ class ISideTextSlideTile(Schema):
         description=_(u"Text that appears on the side of the slide"),
         required=True,
     )
-    image = schema.Choice(
+
+    selected_image = RichText(
         title=_(u"Select an image"),
+        description=_(u"Select or upload an image below"),
         required=True,
-        vocabulary='plone.app.vocabularies.Catalog',
-    )
-    form.widget(
-        'image',
-        RelatedItemsFieldWidget,
-        vocabulary='plone.app.vocabularies.Catalog',
-        pattern_options={
-            'recentlyUsed': True,
-            'selectableTypes': ['Image'],
-        }
     )
 
     image_alignment = schema.Choice(

@@ -6,22 +6,13 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="plone">
 <body>
-<div tal:define="image view/image_url;
-                 alignment view/alignment|nothing;
-                 noimage python:not image and 'noimage' or '';
+<div tal:define="alignment view/alignment|nothing;
                  id view/tile_id" 
-        class="side-text-slide row ${noimage} align-${alignment}" style="padding-top: 25px;padding-bottom:25px;">
+        class="side-text-slide row align-${alignment}">
     
-    <tal:alignmentcss tal:condition="python: alignment == 'Right'">
-        <style>
-            .side-text-slide.align-Right .side-text-image {
-                float:right;
-            }
-        </style>
-    </tal:alignmentcss>
     <div class="side-text-slide-wrapper col-xs-12">
         <div class="side-text-image col-xs-12 col-sm-12 col-md-5 col-lg-5">
-            <img src="${image}" class="side-text-image" style="max-width: 100%; height: auto; width: 100%;"/>
+            <div tal:replace="structure view/selected_image/output" />
         </div>
         <div class="side-text-body col-xs-12 col-sm-12 col-md-7 col-lg-7">
             <h4 class="side-text-title">
@@ -31,5 +22,4 @@
         </div>
     </div>
 </div>
-
 </body></html>
