@@ -16,7 +16,8 @@
     position: relative;
 }
 
-#formfield-collective-tiles-storytelling-sidetextslide-selected_image {
+#formfield-collective-tiles-storytelling-sidetextslide-selected_image,
+#formfield-collective-tiles-storytelling-fullscreenslide-selected_image {
     .mce-menubar {
         display: none;
     }
@@ -29,5 +30,79 @@
         .mce-flow-layout > div:last-child > div > div:not(:last-child) {
             display: none;
         }
+    }
+}
+
+.fullscreen-slide-wrapper {
+    position: relative;
+
+    .fullscreen-sticky-image {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        height: 100vh;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: translateZ(0);
+
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+
+        z-index: 1;
+        @media(min-width: 1024px) {
+            background-attachment: fixed;
+        }
+    }
+
+    .fullscreen-text-body {
+        max-width: 75%;
+        margin: 0 auto;
+        color: #ffffff;
+        padding-top: 150px;
+        padding-bottom: 150px;
+        padding-left: 40px;
+        padding-right: 40px;
+        z-index: 100;
+        position: relative;
+
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: translateZ(0);
+
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+
+        @media(max-width: 767px) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 25px;
+            padding-right: 25px;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+body.template-edit.mosaic-layout-customized {
+    .fullscreen-sticky-image {
+        height: 65vh;
+        position: relative;
+        background-attachment: none;
+    }
+
+    .fullscreen-text-body {
+        position: absolute;
+        bottom: 0;
     }
 }

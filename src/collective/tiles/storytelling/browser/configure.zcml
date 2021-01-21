@@ -33,4 +33,14 @@
         schema=".storytelling.ISideTextSlideTile"
     />
 
+    <plone:tile
+        name="collective.tiles.storytelling.fullscreenslide"
+        title="Storytelling - Fullscreen Slide"
+        for="*"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        class=".fullscreen.FullscreenSlideTile"
+        schema=".fullscreen.IFullscreenSlideTile"
+    />
+
 </configure>

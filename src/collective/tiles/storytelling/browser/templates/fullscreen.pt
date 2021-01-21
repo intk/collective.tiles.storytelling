@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+<body>
+<div tal:define="id view/tile_id;
+                 image_url view/image_url;" 
+        class="fullscreen-slide row">
+    
+    <div class="fullscreen-slide-wrapper col-xs-12">
+        
+        <div class="fullscreen-image col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="fullscreen-sticky-image" tal:attributes="style string:background-image: url(${image_url})"></div>
+            <div class="fullscreen-text-body">
+                <h4 class="fullscreen-title">
+                    <span tal:replace="view/title" />
+                </h4>
+                <div tal:replace="structure view/body/output" />
+            </div>
+        </div>
+    </div>
+</div>
+</body></html>
