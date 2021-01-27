@@ -54,7 +54,7 @@ class IFullscreenSlideTile(Schema):
     
     body = RichText(
         title=_(u"Slide body text"),
-        description=_(u"Text that appears on the side of the slide"),
+        description=_(u"Text that appears on top of the fullscreen image"),
         required=True,
     )
 
