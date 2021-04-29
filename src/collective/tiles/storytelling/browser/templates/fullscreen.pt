@@ -14,8 +14,9 @@
         
         <div class="fullscreen-image col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="fullscreen-sticky-image" tal:attributes="style string:background-image: url(${image_url})"></div>
+            <div class="fullscreen-sticky-gradient-background"></div>
             <div class="fullscreen-text-body">
-                <h4 class="fullscreen-title">
+                <h4 class="fullscreen-title" tal:condition="view/title">
                     <span tal:replace="view/title" />
                 </h4>
                 <div tal:replace="structure view/body/output" />

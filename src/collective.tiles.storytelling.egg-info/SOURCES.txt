@@ -32,12 +32,17 @@ src/collective/tiles/storytelling/testing.py
 src/collective/tiles/storytelling/browser/__init__.py
 src/collective/tiles/storytelling/browser/__init__.pyo
 src/collective/tiles/storytelling/browser/configure.zcml
+src/collective/tiles/storytelling/browser/fullscreen.py
 src/collective/tiles/storytelling/browser/storytelling.py
+src/collective/tiles/storytelling/browser/textslide.py
 src/collective/tiles/storytelling/browser/overrides/.gitkeep
 src/collective/tiles/storytelling/browser/static/.gitkeep
 src/collective/tiles/storytelling/browser/static/css/storytelling-bundle-compiled.css
 src/collective/tiles/storytelling/browser/static/css/storytelling.less
+src/collective/tiles/storytelling/browser/templates/fullscreen.pt
 src/collective/tiles/storytelling/browser/templates/sidetext.pt
+src/collective/tiles/storytelling/browser/templates/textslide.pt
+src/collective/tiles/storytelling/browser/templates/videoslide.pt
 src/collective/tiles/storytelling/locales/README.rst
 src/collective/tiles/storytelling/locales/__init__.py
 src/collective/tiles/storytelling/locales/__init__.pyo

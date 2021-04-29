@@ -57,3 +57,49 @@ class ISideTextSlideTile(Schema):
     )
 
 
+class VideoSlideTile(Tile):
+    template = ViewPageTemplateFile('templates/videoslide.pt')
+
+    def __call__(self):
+        self.update()
+        return self.template()
+
+    def update(self):
+        self.title = self.data.get('title', '')
+        self.body = self.data.get('body', '')
+        self.alignment = self.data.get('text_alignment', '')
+        self.video_url = self.data.get('video_url', '')
+        self.selected_image = self.data.get('selected_image', '')
+        self.tile_id = getUtility(IIDNormalizer).normalize(self.title)
+
+
+class IVideoSlideTile(Schema):
+    title = schema.TextLine(
+        title=_(u"Slide title"),
+        required=True,
+    )
+
+    video_url = schema.TextLine(
+        title=_(u"Youtube url"),
+        required=True,
+    )
+
+    body = RichText(
+        title=_(u"Slide body text"),
+        description=_(u"Text that appears underneath the video"),
+        required=True,
+    )
+
+    selected_image = RichText(
+        title=_(u"Select an image for the video thumbnail"),
+        description=_(u"This image will appear before the video starts playing"),
+        required=True,
+    )
+
+    text_alignment = schema.Choice(
+        title=_(u"Choose text alignment"),
+        description=_(u"Text is aligned to the left by default"),
+        values=[_(u'Left'), _(u'Right')],
+        default=_(u'Left'),
+        required=False
+    )

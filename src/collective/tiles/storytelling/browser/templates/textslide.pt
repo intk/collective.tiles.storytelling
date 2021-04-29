@@ -8,7 +8,7 @@
 <body>
     <div class="text-slide row">
         <div class="text-slide-wrapper col-xs-12">
-            <div class="text-slide=body">
+            <div class="text-slide-body">
                 <div tal:replace="structure view/body/output" />
             </div>
         </div>

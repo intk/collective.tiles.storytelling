@@ -49,7 +49,7 @@ class FullscreenSlideTile(Tile):
 class IFullscreenSlideTile(Schema):
     title = schema.TextLine(
         title=_(u"Slide title"),
-        required=True,
+        required=False,
     )
     
     body = RichText(

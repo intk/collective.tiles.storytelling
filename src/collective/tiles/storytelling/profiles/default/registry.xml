@@ -23,6 +23,8 @@
 		<value key="weight">10</value>
   	</records>
 
+  	
+
 	<records prefix="plone.app.mosaic.app_tiles.collective_tiles_storytelling_fullscreenslide"
            interface="plone.app.mosaic.interfaces.ITile">
 		<value key="name">collective.tiles.storytelling.fullscreenslide</value>
@@ -49,6 +51,20 @@
 		<value key="favorite">true</value>
 		<value key="rich_text">false</value>
 		<value key="weight">12</value>
+  	</records>
+
+  	<records prefix="plone.app.mosaic.app_tiles.collective_tiles_storytelling_videoslide"
+           interface="plone.app.mosaic.interfaces.ITile">
+		<value key="name">collective.tiles.storytelling.videoslide</value>
+		<value key="label">Storytelling - Video Slide</value>
+		<value key="category">structure</value>
+		<value key="tile_type">app</value>
+		<value key="default_value"></value>
+		<value key="read_only">false</value>
+		<value key="settings">true</value>
+		<value key="favorite">true</value>
+		<value key="rich_text">false</value>
+		<value key="weight">13</value>
   	</records>
 
 	<record name="plone.app.mosaic.app_tiles.collective_tiles_storytelling_sidetextslide.selected_image.available_actions">

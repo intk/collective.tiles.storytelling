@@ -34,6 +34,16 @@
     />
 
     <plone:tile
+        name="collective.tiles.storytelling.videoslide"
+        title="Storytelling - Video Slide"
+        for="*"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        class=".storytelling.VideoSlideTile"
+        schema=".storytelling.IVideoSlideTile"
+    />
+
+    <plone:tile
         name="collective.tiles.storytelling.fullscreenslide"
         title="Storytelling - Fullscreen Slide"
         for="*"
