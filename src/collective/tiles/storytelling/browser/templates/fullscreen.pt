@@ -21,6 +21,9 @@
                 </h4>
                 <div tal:replace="structure view/body/output" />
             </div>
+            <div class="image-caption">
+              <p tal:content="view/image_caption|nothing"></p>
+            </div>
         </div>
     </div>
 </div>

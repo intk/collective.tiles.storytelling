@@ -13,6 +13,9 @@
     <div class="side-text-slide-wrapper col-xs-12">
         <div class="side-text-image col-xs-12 col-sm-12 col-md-5 col-lg-5">
             <div tal:replace="structure view/selected_image/output" />
+            <div class="image-caption" tal:condition="view/image_caption|False">
+              <p tal:content="view/image_caption|nothing"></p>
+            </div>
         </div>
         
         <div class="side-text-body col-xs-12 col-sm-12 col-md-7 col-lg-7">

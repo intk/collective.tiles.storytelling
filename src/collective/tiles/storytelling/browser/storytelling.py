@@ -28,6 +28,7 @@ class SideTextSlideTile(Tile):
         self.body = self.data.get('body', '')
         self.alignment = self.data.get('image_alignment', '')
         self.selected_image = self.data.get('selected_image', '')
+        self.image_caption = self.data.get('image_caption', '')
         self.tile_id = getUtility(IIDNormalizer).normalize(self.title)
 
 
@@ -54,6 +55,11 @@ class ISideTextSlideTile(Schema):
         values=[_(u'Left'), _(u'Right')],
         default=_(u'Left'),
         required=False
+    )
+
+    image_caption = schema.TextLine(
+        title=_(u"Image caption / copyrights"),
+        required=False,
     )
 
 

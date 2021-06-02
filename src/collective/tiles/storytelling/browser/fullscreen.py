@@ -42,6 +42,7 @@ class FullscreenSlideTile(Tile):
         self.title = self.data.get('title', '')
         self.body = self.data.get('body', '')
         self.selected_image = self.data.get('selected_image', '')
+        self.image_caption = self.data.get('image_caption', '')
         self.image_url = self.get_img_src(getattr(self.selected_image, 'output', None))
         self.tile_id = getUtility(IIDNormalizer).normalize(self.title)
         
@@ -62,6 +63,11 @@ class IFullscreenSlideTile(Schema):
         title=_(u"Select an image"),
         description=_(u"Select or upload an image below"),
         required=True,
+    )
+
+    image_caption = schema.TextLine(
+        title=_(u"Image caption / copyrights"),
+        required=False,
     )
 
 
